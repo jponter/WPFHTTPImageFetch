@@ -61,6 +61,10 @@ namespace WPFHTTPImageFetch
             
              imageControl = LoadImage(imageBytes);
 
+            //can safely clear out imageBytes now
+            imageBytes = [];
+            Helpers.WriteDebug("Image bytes cleared.");
+
             ImagePlaceholder.Source = imageControl;
             LoadImageButton.Content = originalContent;
         }
